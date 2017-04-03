@@ -1,8 +1,7 @@
 <?php
-	require 'config/app.php';
-	require 'config/security_admin.php';
-	include 'templates/header.inc';
-	include 'templates/navbar.inc';
+	require '../config/app.php';
+	include '../templates/header.inc';
+	include '../templates/navbar.inc';
 ?>
 
 <div class="container-fluid dashboard">

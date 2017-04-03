@@ -14,15 +14,15 @@
 			  <div class="panel-body">
 			  	<div class="row">
 			  		<div class="col-md-8 col-md-offset-2">
-					    <form method="POST">
-					    	<div class="form-group">
+					    <form method="POST" action="config/loguin.php">
+					    	<div class="form-group" >
 					    		<input type="text" class="form-control" name="correo" placeholder="Correo Electrónico" data->
 					    	</div>
 					    	<div class="form-group">
-					    		<input type="password" class="form-control" name="contrasena" placeholder="Digite su contraseña">
+					    		<input type="password" class="form-control" name="clave" placeholder="Digite su contraseña">
 					    	</div>
 					    	<div class="form-group">
-					    		<input type="submit" value="Ingresar" class="btn btn-default">
+					    		<input type="submit" value="Ingresar" class="btn btn-primary">
 					    	</div>
 				    	</form>
 			    	</div>
