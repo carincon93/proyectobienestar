@@ -1,5 +1,4 @@
 <?php 
-  session_start();
   require "../config/conexion.php";
   require "../config/app.php";
   if ($_GET) {
@@ -33,7 +32,7 @@
           </tr>
           <tr>
             <th>especialidad</th>
-            <td><?php echo $row['especialidad']; ?></td>
+            <td class="especialidad"><?php echo $row['especialidad']; ?></td>
           </tr>
           <tr>
             <th>ficha</th>

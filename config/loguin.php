@@ -3,6 +3,7 @@
 	$correo = $_POST['correo'];
 	$clave = $_POST['clave'];
  	$sql = "SELECT nombre, apellido FROM administrador WHERE correo = '$correo' AND clave = '$clave'";
+ 	
 	$query = mysqli_query($con, $sql);
  	if(mysqli_num_rows($query) > 0){
  		$row = mysqli_fetch_array($query);

@@ -1,3 +1,9 @@
 div.dashboard {
 	padding-top: 100px;
 }
+.table { background-color: #fff; }
+.table tbody tr td {
+	text-transform: capitalize;
+}
+.table .especialidad { text-transform: uppercase; }
+
