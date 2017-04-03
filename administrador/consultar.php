@@ -1,14 +1,14 @@
 <?php 
   session_start();
-  $page = 'gestionar_empleados';
-  require "../../php/conexion.php";
+  require "../config/conexion.php";
+  require "../config/app.php";
   if ($_GET) {
     $id    = $_GET['id'];
-    $sql   = mysqli_query($con,"SELECT * FROM empleados WHERE id_empleado = $id");
+    $sql   = mysqli_query($con,"SELECT * FROM aprendices WHERE id_aprendices = $id");
     $row   = mysqli_fetch_array($sql);
   }
-  include '../../layouts/header.php';
-  include '../../layouts/navbar.php' 
+  include '../templates/header.inc';
+  include '../templates/navbar.inc';
 ?>
   <div class="content">
     <div class="container-fluid">
@@ -20,43 +20,27 @@
             <td><?php echo $row['nombre']; ?></td>
           </tr>
           <tr>
-            <th>Apellido1</th>
-            <td><?php echo $row['apellido1']; ?></td>
+            <th>Apellido</th>
+            <td><?php echo $row['apellido']; ?></td>
           </tr>
           <tr>
-            <th>Apellido2</th>
-            <td><?php echo $row['apellido2']; ?></td>
-          </tr>
-          <tr>
-            <th>Sexo</th>
-            <td><?php echo $row['sexo']; ?></td>
-          </tr>
-          <tr>
-            <th>Teléfono</th>
-            <td><?php echo $row['telefono']; ?></td>
-          </tr>
-          <tr>
-            <th>Tipo documento</th>
+            <th>tipo de documento</th>
             <td><?php echo $row['tipo_documento']; ?></td>
           </tr>
           <tr>
-            <th>Numero documento</th>
+            <th>numero de documento</th>
             <td><?php echo $row['numero_documento']; ?></td>
           </tr>
           <tr>
-            <th>Correo</th>
-            <td><?php echo $row['correo']; ?></td>
+            <th>especialidad</th>
+            <td><?php echo $row['especialidad']; ?></td>
           </tr>
           <tr>
-            <th>Contraseña</th>
-            <td><?php echo $row['contrasena']; ?></td>
-          </tr>   
-          <tr>
-            <th>Cargo</th>
-            <td><?php echo $row['cargo']; ?></td>
+            <th>ficha</th>
+            <td><?php echo $row['ficha']; ?></td>
           </tr>
         </table>
       </div>
     </div>
   </div>
-<?php include '../../layouts/footer.php' ?>
+<?php include '../templates/footer.inc'; ?>
