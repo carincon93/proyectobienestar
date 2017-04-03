@@ -5,7 +5,7 @@
 	</p>
 
 </footer>
-<script src="<?=$assets_js?>jquery-3.1.1.js"></script>
+<script src="<?=$assets_js?>jquery-3.1.1.min.js"></script>
 <script src="<?=$assets_js?>bootstrap.min.js"></script>
 <script src="<?=$assets_js?>jquery.form-validator.min.js"></script>
 <script src="<?=$assets_js?>jquery.form-validator.es.js"></script>
