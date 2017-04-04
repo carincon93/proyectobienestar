@@ -46,6 +46,9 @@
                                 <td><?php echo $row['ficha']; ?></td>
                             </tr>
                         </table>
+                            <label for="">¿El estudiante recibira Suplemento Alimenticio?</label>
+                             <button class="btn btn-info si" data-id="<?=$row['id_aprendices']?>">Si</button>
+                             <button class="btn btn-danger no" data-id="<?=$row['id_aprendices']?>">No</button>
                     </div>
                 </div>
             </div>
