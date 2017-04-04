@@ -16,7 +16,7 @@ input[accept='.csv'] {display: none;}
 .form-group input[type=file] { 
 	opacity: initial;
 	position: initial; }
-.navbar.navbar-inverse { padding: 0.7rem 1rem; }
+/*.navbar.navbar-inverse { padding: 0.7rem 1rem; }*/
 .table-fluid { overflow: auto; }
 .checkbox .checkbox-material:before { background-color: initial; }
 .form-group.is-focused label.control-label { color: #27ABB0; }
@@ -31,6 +31,7 @@ input[accept='.csv'] {display: none;}
 	padding: 2rem;}
 .table tbody tr td { text-transform: capitalize; }
 .table .especialidad { text-transform: uppercase; }
+.navbar { padding: 0; }
 .aside-nav {
 	background-color: #3f51b5;
 	box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42), 0 3px 20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
@@ -91,6 +92,12 @@ main { padding-left: 20rem; }
 }
 .fa.fa-barcode {
 	font-size: 8rem;
+}
+.search {
+    background-color: #325b6b;
+    height: 8rem;
+	width: 100%;
+
 }
 
 /*Media Queries*/
