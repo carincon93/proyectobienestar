@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-04-2017 a las 05:53:28
+-- Tiempo de generación: 04-04-2017 a las 17:51:01
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -56,17 +56,8 @@ CREATE TABLE `aprendices` (
   `especialidad` varchar(100) COLLATE utf8_bin NOT NULL,
   `ficha` int(11) NOT NULL,
   `cod_aprendiz` varchar(64) COLLATE utf8_bin NOT NULL,
-  `estado` varchar(32) COLLATE utf8_bin NOT NULL
+  `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
-
---
--- Volcado de datos para la tabla `aprendices`
---
-
-INSERT INTO `aprendices` (`id_aprendices`, `nombres`, `apellidos`, `tipo_documento`, `numero_documento`, `especialidad`, `ficha`, `cod_aprendiz`, `estado`) VALUES
-(1, 'jaime', 'palomino', 'cedula', 1054239123, 'adsi', 1132816, '', ''),
-(2, 'camilo', 'rincon', 'cedula', 1053826372, 'adsi', 1190821, 'A108', ''),
-(6, 'Vanessa', 'Rincón', 'cedula', 10123231, 'tec', 1112336, 'A206', '');
 
 -- --------------------------------------------------------
 
@@ -84,13 +75,6 @@ CREATE TABLE `historial` (
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Volcado de datos para la tabla `historial`
---
-
-INSERT INTO `historial` (`id`, `nombres`, `apellidos`, `especialidad`, `estado`, `aprendiz_cod`, `fecha`, `date`) VALUES
-(8, 'camilo', 'rincon', 'adsi', 1, 'A108', '2017-04-04 03:36:47', '2017-04-03');
 
 --
 -- Índices para tablas volcadas
@@ -129,12 +113,12 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de la tabla `aprendices`
 --
 ALTER TABLE `aprendices`
-  MODIFY `id_aprendices` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_aprendices` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `historial`
 --
 ALTER TABLE `historial`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Restricciones para tablas volcadas
 --
@@ -143,7 +127,7 @@ ALTER TABLE `historial`
 -- Filtros para la tabla `historial`
 --
 ALTER TABLE `historial`
-  ADD CONSTRAINT `historial_ibfk_1` FOREIGN KEY (`aprendiz_cod`) REFERENCES `aprendices` (`cod_aprendiz`);
+  ADD CONSTRAINT `historial_ibfk_1` FOREIGN KEY (`aprendiz_cod`) REFERENCES `aprendices` (`cod_aprendiz`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

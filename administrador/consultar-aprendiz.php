@@ -9,7 +9,7 @@
 		$cod_aprendiz = $_GET['cod_aprendiz'];
 
 		$query 	= mysqli_query($con, "SELECT * FROM aprendices WHERE cod_aprendiz = '$cod_aprendiz'");
-		$query2 = mysqli_query($con, "SELECT * FROM historial WHERE aprendiz_cod = '$cod_aprendiz'");
+		$query2 = mysqli_query($con, "SELECT * FROM historial WHERE aprendiz_cod = '$cod_aprendiz' ORDER BY id DESC");
 
 		$row	= mysqli_fetch_array($query);
 	}
@@ -53,7 +53,7 @@
 							<div class="checkbox">
 								<label>
 									<?php $row2 = mysqli_fetch_array($query2); ?>
-									<input type="checkbox" name="option" value="1" <?php if ($row2['date'] == '') echo "disabled" ?>>
+									<input type="checkbox" name="option" value="1" <?php if ($row2['date'] == date('Y-m-d') && $row2['estado'] != 0) echo "disabled" ?> >
 									Ha recibido el suplemento?
 								</label>
 							</div>
@@ -69,14 +69,14 @@
 								<label class="control-label">Especialidad</label>
 								<input type="text" value="<?= $row['especialidad'] ?>" class="form-control" name="especialidad">
 							</div>
-							<input type="date" name="date" value="<?= $row2['date']; ?>">
+							<input type="text" name="date" value="<?= date('Y-m-d'); ?>" >
 							
 							<input type="hidden" value="<?= $row['cod_aprendiz'] ?>" name="cod_aprendiz">
 							<h3>Historial</h3>
 							<ol>
-								<?php while ($row2 = mysqli_fetch_array($query2)): ?>
-								<li><?= $row2['fecha'] ?></li>
-								<?php endwhile; ?>
+								<?php foreach ($query2 as $key => $row2): ?>
+								<li><?php echo $row2['fecha'] ?></li>
+								<?php endforeach ?>
 							</ol>
 							<button type="submit">Guardar</button>
 						</form>

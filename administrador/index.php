@@ -15,7 +15,7 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">			
 				<!-- Button trigger modal -->
-				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+				<button class="btn btn-primary search" data-toggle="modal" data-target="#myModal">
 				 	Buscar aprendiz por código de barras
 				</button>
 
