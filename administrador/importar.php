@@ -23,16 +23,27 @@
 		$handle = fopen($file, "r");
 		$c = 1;
 
-		while(($filesop = fgetcsv($handle, 1000, ";")) !== false)
+		while(($filesop = fgetcsv($handle, 1000, ",")) !== false)
 		{
 			if ($c > 1) {
-				$nombres = $filesop[1];
-				$apellidos = $filesop[2];
-				$tipo_documento = $filesop[3];
-				$numero_documento = $filesop[4];
-				$especialidad = $filesop[5];
-				$ficha = $filesop[6];
-				$sql = mysqli_query($con, "INSERT INTO aprendices (id_aprendices, nombres, apellidos, tipo_documento, numero_documento, especialidad, ficha) VALUES (default, '$nombres', '$apellidos', '$tipo_documento', '$numero_documento', '$especialidad', '$ficha')");
+				$nombre_completo = $filesop[1];
+				$tipo_documento = $filesop[2];
+				$numero_documento = $filesop[3];
+				$direccion = $filesop[4];
+				$barrio = $filesop[5];
+				$estrato = $filesop[6];
+				$telefono = $filesop[7];
+				$email=$filesop[8];
+				$programa_formacion = $filesop[9];
+				$numero_ficha = $filesop[10];
+				$jornada = $filesop[11];
+				$dep1 = $filesop[12];
+				$dep2 = $filesop[13];
+				$dep3 = $filesop[14];
+				$apoyo = $filesop[15];
+				$compromiso = $filesop[16];
+				$especificacion_suplemento = $filesop[17];
+				$sql = mysqli_query($con, "INSERT INTO aprendices (id_aprendices, nombre_completo, tipo_documento, numero_documento, direccion, barrio,estrato,telefono,email,programa_formacion,numero_ficha,jornada,dep1,dep2,dep3,apoyo,compromiso,especificacion_suplemento) VALUES (default, '$nombre_completo', '$tipo_documento', '$numero_documento', '$direccion', '$barrio', '$estrato','$telefono','$email','$programa_formacion','$numero_ficha','$jornada','$dep1','$dep2','$dep3','$apoyo','$compromiso','$especificacion_suplemento')");
 				if($sql){
 				echo "You database has imported successfully. You have inserted ". $c ." recoreds";
 				}else{

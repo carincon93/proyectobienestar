@@ -47,12 +47,10 @@
 				<hr>
 				<div class="table-container table-fluid">
 					<table class="table">
-						<caption>Lista de aprendices favorecidos para recibier el suplemento alimenticio.</caption>
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Nombres</th>
-								<th>Apellidos</th>
+								<th>Nombre completo</th>
 								<th>Programa de formación</th>
 								<th>Ficha de programa</th>
 								<th>Acciones</th>
@@ -60,17 +58,16 @@
 						</thead>
 						<tbody>
 							<?php while ($row = mysqli_fetch_array($query)): ?>
-								<tr>
-									<td><?= $row['id_aprendices'] ?></td>
-									<td><?= $row['nombres'] ?></td>
-									<td><?= $row['apellidos'] ?></td>
-									<td class="especialidad"><?= $row['especialidad'] ?></td>
-									<td></td>
-									<td>
-										<a href="consultar.php?id=<?= $row['id_aprendices'] ?>">C</a>
-										<a href="editar.php?id=<?= $row['id_aprendices'] ?>">M</a>
-									</td>
-								</tr>
+							<tr>
+								<td><?= $row['id_aprendices'] ?></td>
+								<td><?= $row['nombre_completo'] ?></td>
+								<td class="programa_formacion"><?= $row['programa_formacion'] ?></td>
+								<td><?= $row['numero_ficha'] ?></td>
+								<td>
+									<a href="consultar.php?id=<?= $row['id_aprendices'] ?>">C</a>
+									<a href="editar.php?id=<?= $row['id_aprendices'] ?>">M</a>
+								</td>
+							</tr>
 							<?php endwhile; ?>
 						</tbody>
 					</table>
