@@ -6,7 +6,6 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a href="index.php" class="navbar-brand">Volver</a>
 	</div>
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav navbar-right">
@@ -19,7 +18,13 @@
 					<li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
 				</ul>			
 			</li>
-
 		</ul>
 	</div>
 </div>
+<aside class="aside-nav">
+	<ul>
+		<li class="aside-links">
+			<a href="../administrador/importar.php"><i class="fa fa-database"></i>&nbspImportar base de datos</a>
+		</li>
+	</ul>
+</aside>

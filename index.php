@@ -9,12 +9,11 @@
 			<h1 class="text-center">Suplemento Alimenticio</h1>
 			<hr>
 			<div class="panel panel-default">
-			  <div class="panel-heading">
-			  </div>
+			  <div class="panel-heading"></div>
 			  <div class="panel-body">
 			  	<div class="row">
 			  		<div class="col-md-8 col-md-offset-2">
-					    <form method="POST" action="config/loguin.php">
+					    <form method="POST" action="config/login.php">
 					    	<div class="form-group" >
 					    		<input type="text" class="form-control" name="correo" placeholder="Correo Electrónico" data->
 					    	</div>

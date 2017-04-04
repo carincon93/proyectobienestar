@@ -1,9 +1,112 @@
-div.dashboard {
-	padding-top: 100px;
-}
-.table { background-color: #fff; }
-.table tbody tr td {
-	text-transform: capitalize;
-}
+/*Setear Bootstrap*/
+html, body { height: 100%; }
+ul { padding: 0; }
+li { list-style: none; }
+a[href] { 
+	color: inherit; 
+	text-decoration: none;}
+input[accept='.csv'] {display: none;}
+.form-group.is-focused .form-control { 
+    background-image: linear-gradient(#27A1B0, #27ABB0), linear-gradient(#D2D2D2, #D2D2D2); }
+.breadcrumb {
+    padding-top: 7.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1; }
+.form-group input[type=file] { 
+	opacity: initial;
+	position: initial; }
+.navbar.navbar-inverse { padding: 0.7rem 1rem; }
+.table-fluid { overflow: auto; }
+.checkbox .checkbox-material:before { background-color: initial; }
+.form-group.is-focused label.control-label { color: #27ABB0; }
+
+/*Proyecto*/
+.dashboard { padding-top: 11.5rem; }
+.page-content { 
+	min-height: 100%;
+	position: relative;  }
+.table-container { 
+	background-color: #fff; 
+	padding: 2rem;}
+.table tbody tr td { text-transform: capitalize; }
 .table .especialidad { text-transform: uppercase; }
+.aside-nav {
+	background-color: #3f51b5;
+	box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42), 0 3px 20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+	min-height: 100%;
+	padding-top: 6.4rem;
+    position: fixed;
+    width: 20rem;
+}
+.aside-links a {
+	color: #fff;
+	display: block;
+	padding: 1rem;
+}
+.aside-links a:hover { color: #ccc;}
+.aside-links:hover { 
+	background-color: #3749AB; }
+main { padding-left: 20rem; }
+.file-img {
+	width: 100px;
+    height: 135px;
+    background-color: #d3394c;
+    display: block;
+    position: relative;
+    padding: 35px 0;
+    margin: 0 auto 10px;
+    font-size: 5rem;
+    text-align: center;
+    color: #fff;
+}
+.file-img:after, .file-img:before {
+    width: 0;
+    height: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.file-img:after {
+	border-bottom: 20px solid #722040;
+    border-right: 20px solid transparent;
+}
+.file-img:before {
+	border-top: 20px solid #ccc;
+    border-left: 20px solid transparent;
+}
+.file-img:hover { 
+	background-color: #A22232;
+	cursor: pointer; }
+.fa.fa-upload { 
+	position: relative;
+	animation: miAnimacion 2s infinite;
+	transition: all 700ms ease; }
+.filename {
+	color: #A22232;
+	display: block;
+	font-size: 3rem;
+	text-align: center;
+}
+.fa.fa-barcode {
+	font-size: 8rem;
+}
+
+/*Media Queries*/
+@media (max-width: 991px) {
+	.aside-nav { display: none; }
+	main { padding: 0; }
+}
+
+/*Animation*/
+@keyframes miAnimacion {
+    0% { 
+    	top: 0rem; }
+    50% { 
+		opacity: 0.2;
+    	top: 1.1rem; }
+    100% { 
+    	top: 0; }
+}
 
