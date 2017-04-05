@@ -14,11 +14,7 @@
 
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">			
-				<!-- Button trigger modal -->
-				<button class="btn btn-primary search" data-toggle="modal" data-target="#myModal">
-				 	Buscar aprendiz por código de barras
-				</button>
-
+				
 				<!-- Modal Core -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  <div class="modal-dialog">
@@ -57,14 +53,15 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php $count = 0; ?>
 							<?php while ($row = mysqli_fetch_array($query)): ?>
 							<tr>
-								<td><?= $row['id_aprendices'] ?></td>
+								<td><?= ++$count ?></td>
 								<td><?= $row['nombre_completo'] ?></td>
-								<td class="programa_formacion"><?= $row['programa_formacion'] ?></td>
+								<td class="text-uppercase"><?= $row['programa_formacion'] ?></td>
 								<td><?= $row['numero_ficha'] ?></td>
 								<td>
-									<a href="consultar.php?id=<?= $row['id_aprendices'] ?>">C</a>
+									<a href="ver_solicitud.php?id=<?= $row['id_aprendices'] ?>"><i class="fa fa-file-text"></i>&nbsp Ver solicitud</a>
 									<a href="editar.php?id=<?= $row['id_aprendices'] ?>">M</a>
 								</td>
 							</tr>

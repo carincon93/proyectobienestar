@@ -10,21 +10,11 @@ $(document).ready(function() {
 		$('.filename').text($filename);
 	});
 
-    $('.si').click(function(event) {
-        if(confirm('El aprendiz recibira apoyo?')){
-            $id = $(this).attr('data-id');
-            window.location.replace('../administrador/seleccion.php?id='+$id);
-        }else{
-        	alert('Proceso Cancelado');
-        }
+    $('#myModal').on('shown.bs.modal', function(e) {
+    	$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     });
-     $('.no').click(function(event) {
-        if(confirm('El aprendiz no recibira el apoyo?')){
-            $id = $(this).attr('data-id');
-            window.location.replace('../administrador/selno.php?id='+$id);
-        }else{
-        	alert('Proceso Cancelado');
-        }
+    $('#modalCancel').on('shown.bs.modal', function(e) {
+    	$(this).find('.btn-cancel').attr('href', $(e.relatedTarget).data('href'));
     });
 
 });

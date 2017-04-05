@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-04-2017 a las 19:38:42
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 7.0.8
+-- Tiempo de generación: 05-04-2017 a las 05:48:44
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -75,7 +75,7 @@ CREATE TABLE `aprendices` (
 --
 
 INSERT INTO `aprendices` (`id_aprendices`, `nombre_completo`, `tipo_documento`, `numero_documento`, `direccion`, `barrio`, `estrato`, `telefono`, `email`, `programa_formacion`, `numero_ficha`, `jornada`, `dep1`, `dep2`, `dep3`, `apoyo`, `compromiso`, `especificacion_suplemento`, `cod_aprendiz`, `estado`) VALUES
-(2, 'Maicol Stiven Mancera', 'CEDULA', 1053864341, 'cra 13a', 'villahermosa', 2, 8767455, 'maicol11ce@live.com', 'adsi', 1132816, 'maÃ±ana', 'madre', 'operaria', 'no', 'NINGUNO', 'Se compromete a informar en la oficina de Bienestar al Aprendiz el momento en que usted reciba contrato de aprendizaje, consiguiÃ³ empleo, o cualquier otro beneficio del Gobierno o del SENA (Monitorias, FIC, Apoyos de sostenimiento, entre otros), Se compromete acatar las normas sobre el manejo adecuado del suplemento.', 'dasdasd', '', 1);
+(2, 'Maicol Stiven Mancera', 'CEDULA', 1053864341, 'cra 13a', 'villahermosa', 2, 8767455, 'maicol11ce@live.com', 'adsi', 1132816, 'maÃ±ana', 'madre', 'operaria', 'no', 'NINGUNO', 'Se compromete a informar en la oficina de Bienestar al Aprendiz el momento en que usted reciba contrato de aprendizaje, consiguiÃ³ empleo, o cualquier otro beneficio del Gobierno o del SENA (Monitorias, FIC, Apoyos de sostenimiento, entre otros), Se compromete acatar las normas sobre el manejo adecuado del suplemento.', '', 'abc', 1);
 
 -- --------------------------------------------------------
 
@@ -85,14 +85,20 @@ INSERT INTO `aprendices` (`id_aprendices`, `nombre_completo`, `tipo_documento`, 
 
 CREATE TABLE `historial` (
   `id` int(11) NOT NULL,
-  `nombres` varchar(32) COLLATE utf8_bin NOT NULL,
-  `apellidos` varchar(32) COLLATE utf8_bin NOT NULL,
-  `especialidad` varchar(32) COLLATE utf8_bin NOT NULL,
+  `nombre_completo` varchar(32) COLLATE utf8_bin NOT NULL,
+  `programa_formacion` varchar(32) COLLATE utf8_bin NOT NULL,
   `estado` tinyint(1) NOT NULL,
   `aprendiz_cod` varchar(64) COLLATE utf8_bin NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
+
+--
+-- Volcado de datos para la tabla `historial`
+--
+
+INSERT INTO `historial` (`id`, `nombre_completo`, `programa_formacion`, `estado`, `aprendiz_cod`, `fecha`, `date`) VALUES
+(2, 'Maicol Stiven Mancera', 'adsi', 1, 'abc', '2017-04-05 03:40:01', '2017-04-04');
 
 --
 -- Índices para tablas volcadas
@@ -131,7 +137,7 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de la tabla `aprendices`
 --
 ALTER TABLE `aprendices`
-  MODIFY `id_aprendices` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_aprendices` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `historial`
 --

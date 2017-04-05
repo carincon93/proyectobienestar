@@ -1,4 +1,8 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
+	<!-- Button trigger modal -->
+	<button class="btn btn-primary search" data-toggle="modal" data-target="#myModal">
+	 	Buscar aprendiz por código de barras
+	</button>
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 			<span class="sr-only">Toggle navigation</span>
