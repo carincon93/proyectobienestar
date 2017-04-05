@@ -68,7 +68,7 @@
 								 </div>
 								<label class="col-md-11">									
 									<p>Marca esta casilla una vez el aprendiz haya recibido el suplemento alimenticio!</p>								
-									<input type="checkbox" name="estado" value="1" <?php if ($row_historial['date'] == date('Y-m-d') && $row_historial['estado'] != 0) echo "checked disabled" ?> >
+									<input type="checkbox" class="check-cs" name="estado" value="1" <?php if ($row_historial['date'] == date('Y-m-d') && $row_historial['estado'] != 0) echo "checked disabled" ?> >
 									Ha recibido el suplemento?
 								</label>
 							</div>
@@ -96,7 +96,7 @@
 									<li><?= $row_historial['fecha'] ?></li>
 									<?php endforeach; ?>
 								</ol>
-								<button type="submit" class="btn" <?php if ($row_historial['date'] == date('Y-m-d') && $row_historial['estado'] != 0) echo "disabled" ?>>Guardar</button>
+								<button type="submit" class="btn btn-submit" <?php if ($row_historial['date'] == date('Y-m-d') && $row_historial['estado'] != 0) echo "disabled" ?>>Guardar</button>
 							</div>
 						</form>
 					</div>

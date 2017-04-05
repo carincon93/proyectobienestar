@@ -26,7 +26,7 @@
 				      <div class="modal-body">
 				        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam asperiores eligendi libero fuga dolorem voluptatibus laboriosam neque voluptates dicta quod!</p>
 				        <i class="fa fa-barcode"></i>
-				        <form action="consultar-aprendiz.php" method="GET">
+				        <form action="consultar_aprendiz.php" method="GET">
 							<input type="text" class="form-control" placeholder="Código de barras" name="cod_aprendiz">
 							<div class="modal-footer">
 						        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>

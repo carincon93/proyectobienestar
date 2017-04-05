@@ -16,5 +16,8 @@ $(document).ready(function() {
     $('#modalCancel').on('shown.bs.modal', function(e) {
     	$(this).find('.btn-cancel').attr('href', $(e.relatedTarget).data('href'));
     });
+    $('.check-cs').click(function() {
+		$('.btn-submit').click();
+	});
 
 });
