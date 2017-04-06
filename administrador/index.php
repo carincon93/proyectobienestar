@@ -27,9 +27,9 @@
 				        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam asperiores eligendi libero fuga dolorem voluptatibus laboriosam neque voluptates dicta quod!</p>
 				        <i class="fa fa-barcode"></i>
 				        <form action="consultar_aprendiz.php" method="GET">
-							<input type="text" class="form-control" placeholder="Código de barras" name="cod_aprendiz">
+							<input type="text" class="form-control" placeholder="Código de barras" name="cod_aprendiz" autofocus="">
 							<div class="modal-footer">
-						        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+						        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cerrar</button>
 						        <button type="submit" class="btn btn-info btn-simple">Buscar</button>
 						      </div>
 						</form>	
@@ -41,15 +41,15 @@
 				<h2>Lista de aprendices</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo doloremque, impedit dignissimos porro in, illum. Beatae libero id repellendus ab, eaque nisi, officia ipsum officiis quasi itaque vel ea corporis earum voluptatum nulla voluptates laborum aperiam, vero! Repudiandae, quo, rerum!</p>
 				<hr>
-				<div class="table-container table-fluid">
-					<table class="table">
+				<div class="table-container">
+					<table class="table" id="example">
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Nombre completo</th>
-								<th>Programa de formación</th>
-								<th>Ficha de programa</th>
-								<th>Acciones</th>
+								<th>Nombre completo <i class="fa fa-sort-amount-asc"></i></th>
+								<th>Programa de formación <i class="fa fa-sort-amount-asc"></i></th>
+								<th>Ficha de programa <i class="fa fa-sort-amount-asc"></i></th>
+								<th>Acciones <i class="fa fa-sort-amount-asc"></i></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -69,25 +69,6 @@
 						</tbody>
 					</table>
 				</div>
-				<nav aria-label="Page navigation">
-					<ul class="pagination">
-						<li>
-							<a href="#" aria-label="Previous">
-								<span aria-hidden="true">&laquo;</span>
-							</a>
-						</li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li>
-							<a href="#" aria-label="Next">
-								<span aria-hidden="true">&raquo;</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
 			</div>
 		</div>
 	</div>

@@ -16,8 +16,17 @@ $(document).ready(function() {
     $('#modalCancel').on('shown.bs.modal', function(e) {
     	$(this).find('.btn-cancel').attr('href', $(e.relatedTarget).data('href'));
     });
-    $('.check-cs').click(function() {
-		$('.btn-submit').click();
+    
+	$('.check-cs').click(function() {
+		setTimeout(function() {
+			$('.btn-submit').click();
+		},1800);
+	});
+	
+	$('#example').DataTable();
+	$('#example_wrapper').children().next().addClass('table-fluid');
+	$('#myModal').on('shown.bs.modal', function() {
+	  	$(this).find('[autofocus]').focus();
 	});
 
 });

@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <a class="btn btn-primary" href="index.php">Volver</a>
+                    <a class="btn btn-default" href="index.php">Volver</a>
                     <div class="name"><h3><?= $row['nombre_completo'] ?><strong class="text-uppercase tex-bold"> - <?= $row['programa_formacion'].' ('.$row['numero_ficha'].')'; ?></strong></h3></div>
                     <div class="panel panel-default panel-selection">
                         <!-- Default panel contents -->

@@ -22,7 +22,7 @@
 					    		<input type="password" class="form-control" name="clave" placeholder="Digite su contraseña">
 					    	</div>
 					    	<div class="form-group">
-					    		<input type="submit" value="Ingresar" class="btn btn-primary">
+					    		<input type="submit" value="Ingresar" class="btn btn-default">
 					    	</div>
 				    	</form>
 			    	</div>
