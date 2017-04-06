@@ -23,23 +23,23 @@
                 <div class="col-md-10 col-md-offset-1">
                     <a class="btn btn-default" href="index.php">Volver</a>
                     <div class="name"><h3><?= $row['nombre_completo'] ?><strong class="text-uppercase tex-bold"> - <?= $row['programa_formacion'].' ('.$row['numero_ficha'].')'; ?></strong></h3></div>
-                    <div class="panel panel-default panel-selection">
+                    <div class="panel panel-default">
                         <!-- Default panel contents -->
                         <?php if ($row['estado'] == 0): ?>
-                        <div class="panel-body">
+                        <div class="panel-body panel-selection">
                             <div class="row">
                                 <div class="col-md-1 text-center">
-                                    <i class="fa fa-info-circle"></i>
+                                    <i class="material-icons">info_outline</i>
                                 </div>
                                 <div class="col-md-11">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At enim nulla aut, consequatur, a sed id architecto est laboriosam, nisi mollitia illum minima officia! Nesciunt similique magni autem incidunt nulla ratione aliquam maxime magnam est dolorum eos doloremque laborum ex at distinctio iusto quo rerum quis pariatur vero doloribus, id?</p>
                                     <h3>¿El aprendiz califica para recibir el suplemento alimenticio?</h3>
                                     
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal" data-href="aprobar_seleccion.php?id=<?= $row['id_aprendices'] ?>">Si</button>
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#modalConfirm" data-href="aprobar_seleccion.php?id=<?= $row['id_aprendices'] ?>">Si</button>
                                     <button class="btn btn-danger" data-toggle="modal" data-target="#modalCancel" data-href="reprobar_seleccion.php?id=<?= $row['id_aprendices'] ?>">No</button>
 
                                     <!-- Modal Confirmación -->
-                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                       <div class="modal-dialog">
                                         <div class="modal-content">
                                           <div class="modal-header">
@@ -79,7 +79,7 @@
                             </div>                            
                         </div>
                         <?php else: ?>
-                        <div class="alert alert-success">
+                        <div class="alert panel-selection">
                             <div class="container-fluid">
                                 <div class="alert-icon">
                                     <i class="material-icons">check</i>

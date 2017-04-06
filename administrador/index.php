@@ -41,6 +41,7 @@
 				<h2>Lista de aprendices</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo doloremque, impedit dignissimos porro in, illum. Beatae libero id repellendus ab, eaque nisi, officia ipsum officiis quasi itaque vel ea corporis earum voluptatum nulla voluptates laborum aperiam, vero! Repudiandae, quo, rerum!</p>
 				<hr>
+
 				<div class="table-container">
 					<table class="table" id="example">
 						<thead>

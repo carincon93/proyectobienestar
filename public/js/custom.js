@@ -10,7 +10,7 @@ $(document).ready(function() {
 		$('.filename').text($filename);
 	});
 
-    $('#myModal').on('shown.bs.modal', function(e) {
+    $('#modalConfirm').on('shown.bs.modal', function(e) {
     	$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     });
     $('#modalCancel').on('shown.bs.modal', function(e) {
@@ -24,9 +24,17 @@ $(document).ready(function() {
 	});
 	
 	$('#example').DataTable();
-	$('#example_wrapper').children().next().addClass('table-fluid');
+	$('#example_wrapper').children().next().first().children().addClass('table-fluid');
+	$('#example_wrapper').children().first().addClass('data-table-header');
+	$('#example_wrapper').children().children().children().children().children().removeAttr('class');
+
+
 	$('#myModal').on('shown.bs.modal', function() {
 	  	$(this).find('[autofocus]').focus();
-	});
+	  	$('.modal-content').click(function(event) {
+	  		$(this).find('[autofocus]').focus();	  
+	  	});
+	});	
+
 
 });

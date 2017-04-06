@@ -6,10 +6,10 @@
 			 	Buscar aprendiz por código de barras
 			</button>			
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 text-center">
 			<form action="consultar_aprendiz.php" method="GET">
-				<input type="text" name="">
-				<button type="submit" class="" name="nombre_aprendiz"></button>
+				<input type="text" name="" class="custom-search">
+				<button type="submit" class="btn btn-simple" name="nombre_aprendiz"><i class="material-icons">search</i></button>
 			</form>			
 		</div>
 		<div class="col-md-4">

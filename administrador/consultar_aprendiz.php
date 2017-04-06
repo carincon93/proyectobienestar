@@ -38,25 +38,27 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<a class="btn btn-default" href="index.php">Volver</a>
-				<h2 class="text-capitalize"><?= $row['nombre_completo'] ?> - <span class="text-uppercase">(<?= $row['programa_formacion'] ?>)</span></h2>
+				<div class="row">
+					<div class="col-md-6">
+						<h2 class="text-capitalize custom-h2"><?= $row['nombre_completo'] ?> - <span class="text-uppercase">(<?= $row['programa_formacion'] ?>)</span></h2>						
+					</div>
+					<div class="col-md-6">
+						<?php if ($row_historial['date'] == $current_date && $row_historial['estado'] != 0): ?>
+							<div class="popover right animated shake"> 
+								<div class="arrow"></div> 
+								<div class="popover-content"> 
+									<b>Alerta:</b> El aprendiz ya recibió el suplemento alimenticio. <strong>La fecha y hora de entrega <?= $row_historial['fecha'] ?></strong>								
+								</div> 
+							</div>						
+						<?php endif ?>
+					</div>					
+				</div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo doloremque, impedit dignissimos porro in, illum. Beatae libero id repellendus ab, eaque nisi, officia ipsum officiis quasi itaque vel ea corporis earum voluptatum nulla voluptates laborum aperiam, vero! Repudiandae, quo, rerum!</p>
 				<hr>
 				<div class="panel panel-default">
 					<!-- Default panel contents -->
 					
-					<?php if ($row_historial['date'] == $current_date && $row_historial['estado'] != 0): ?>
-					<div class="alert alert-success">
-						<div class="container-fluid">
-							<div class="alert-icon">
-								<i class="material-icons">check</i>
-							</div>
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true"><i class="material-icons">clear</i></span>
-							</button>
-							<b>Alerta:</b> El aprendiz ya recibió el suplemento alimenticio. <strong>La fecha y hora de entrega <?= $row_historial['fecha'] ?></strong>
-						</div>
-					</div>
-					<?php endif ?>
+					
 					
 
 					<!-- Table -->
