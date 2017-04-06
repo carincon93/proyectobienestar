@@ -15,9 +15,16 @@
 <script src="<?=$assets_js?>material.min.js"></script>
 <script src="<?=$assets_js?>material-kit.js"></script>
 <script>
-	$(document).ready(function(){
+        $(document).ready(function() {
+            $(".eliminar-usuario").click(function(event) {
+                $id = $(this).attr("data-id");
+                $confirm = confirm("en verdad desea eliminar el aprendiz?");
 
-	});
-</script>
+                if ($confirm) {
+                    window.location.replace("../administrador/eliminar.php?id="+$id);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

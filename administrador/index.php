@@ -63,7 +63,9 @@
 								<td><?= $row['numero_ficha'] ?></td>
 								<td>
 									<a href="ver_solicitud.php?id=<?= $row['id_aprendices'] ?>"><i class="fa fa-file-text"></i>&nbsp Ver solicitud</a>
-									<a href="editar.php?id=<?= $row['id_aprendices'] ?>">M</a>
+									<a href="editar.php?id=<?= $row['id_aprendices'] ?>">Modificar datos</a>
+									<a href='javascript:;' class="eliminar-usuario" data-id="<?= $row['id_aprendices'] ?>">eliminar</a>
+
 								</td>
 							</tr>
 							<?php endwhile; ?>
