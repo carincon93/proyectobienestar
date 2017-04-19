@@ -1,35 +1,25 @@
-<?php
-	require 'config/app.php';
-	include 'templates/header.inc';
+<?php 
+require 'config/app.php';
+require 'config/database.php';
+require 'config/redirect.php';
+include 'templates/header.inc';
 ?>
+    <h1>Hello, world!</h1>
+    <form method="POST">
+    	<input type="email" name="correo" placeholder="Correo Electrónico">
+    	<input type="password" name="contrasena" placeholder="Digíte su contraseña">
+    	<button type="submit">Ingresar</button>
+    </form>
+    <?php if ($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
+    	<?php 
+    	$correo 	= $_POST['correo'];
+    	$contrasena = $_POST['contrasena'];
+    	if(login($con, $correo, $contrasena)) {
+			header("location:administrador/index.php");
+			exit();
+		}
+		$con = null;
+    	?>
+    <?php endif ?>
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<h1 class="text-center">Suplemento Alimenticio</h1>
-			<hr>
-			<div class="panel panel-default">
-			  <div class="panel-heading"></div>
-			  <div class="panel-body">
-			  	<div class="row">
-			  		<div class="col-md-8 col-md-offset-2">
-					    <form method="POST" action="config/login.php">
-					    	<div class="form-group" >
-					    		<input type="text" class="form-control" name="correo" placeholder="Correo Electrónico" data->
-					    	</div>
-					    	<div class="form-group">
-					    		<input type="password" class="form-control" name="clave" placeholder="Digite su contraseña">
-					    	</div>
-					    	<div class="form-group">
-					    		<input type="submit" value="Ingresar" class="btn btn-primary">
-					    	</div>
-				    	</form>
-			    	</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<?php include 'templates/footer.inc';?>
+<?php include 'templates/footer.inc'; ?>

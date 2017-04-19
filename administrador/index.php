@@ -1,21 +1,97 @@
 <?php
 	require '../config/app.php';
-	require '../config/conexion.php';
+	require '../config/database.php';
+	require '../config/security.php';
 	include '../templates/header.inc';
 	include '../templates/navbar.inc';
+	$page = 'inicio'
 
-	$query = mysqli_query($con, "SELECT * FROM aprendices");
 ?>
+<ol class="breadcrumb">
+	<li class="active">Inicio</li>
+</ol>
 <main>
-	<ol class="breadcrumb">
-		<li class="active">Inicio</li>
-	</ol>
-	<div class="container-fluid dashboard">
 
+	<div class="container">
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1">			
+			
+			<?php include '../templates/asidenav.inc'; ?>
+			<div class="col-md-10">
+				<?php if (isset($_SESSION['message_action'])): ?>				
+					<div class="alert alert-success">
+					    <div class="container-fluid">
+						  <div class="alert-icon">
+							<i class="material-icons">check</i>
+						  </div>
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true"><i class="material-icons">clear</i></span>
+						  </button>
+					      <b>Aviso: </b><?= $_SESSION['message_action'] ?>
+					    </div>
+					</div>
+					<?php unset($_SESSION['message_action']); ?>
+				<?php endif ?>
 				
-				<!-- Modal Core -->
+				<h3><i class="material-icons">list</i>Lista de solicitudes</h3>
+				<p>Tabla con todas las solicitudes registradas en el sistema. </p>
+				<hr>
+				<div class="table-container">
+					<table class="table" id="example">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Nombre completo <i class="fa fa-sort-amount-asc"></i></th>
+								<th>Programa de formación <i class="fa fa-sort-amount-asc"></i></th>
+								<th>Ficha de programa <i class="fa fa-sort-amount-asc"></i></th>
+								<th>Acciones <i class="fa fa-sort-amount-asc"></i></th>
+							</tr>
+						</thead>
+						<tbody>
+							<span class="hidden"><?php $data = index($con); ?></span>
+							<?php $count = 0; ?>
+							<?php foreach ($data as $key => $solicitud): ?>
+								<tr>
+									<td><?= ++$count ?></td>
+									<td><?= $solicitud['nombre_completo'] ?></td>
+									<td class="text-uppercase"><?= $solicitud['programa_formacion'] ?></td>
+									<td><?= $solicitud['numero_ficha'] ?></td>
+									<td>
+										<a href="ver_solicitud.php?id_aprendiz=<?= $solicitud['id_aprendiz'] ?>"><i class="fa fa-eye actions"></i></a>
+										<a href="modificar_solicitud.php?id_aprendiz=<?= $solicitud['id_aprendiz'] ?>"><i class="fa fa-pencil actions"></i></a>
+										<a href='javascript:;' class="eliminar-usuario" data-id="<?= $solicitud['id_aprendiz'] ?>"><i class="fa fa-trash actions"></i></a>
+									</td>
+								</tr>
+							<?php endforeach ?>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+			</div>
+
+
+
+		<!-- <div class="row">
+			<h3>Datos estadísticos</h3>
+			<article class="col-md-3">
+				<h2 class="text-center"><?php numeroSolicitudes($con); ?></h2>
+				<p class="text-center">Número de aprendices seleccionados</p>
+			</article>
+			<article class="col-md-3">
+				<h2 class="text-center"><?php index($con); ?></h2>
+				<p class="text-center">Número de solicitudes</p>
+			</article>
+			<article class="col-md-3">
+				<h2 class="text-center"><?php numeroHistorial($con); ?></h2>
+				<p class="text-center">Número total de entregas de suplementos</p>
+			</article>
+			<article class="col-md-3">
+				<?php  $fecha_actual = date('Y-m-d');?>
+				<h2 class="text-center"><?php numeroEntregasHoy($con, $fecha_actual); ?></h2>
+				<p class="text-center">Número de entregas de suplementos hoy <?= date('Y-m-d'); ?></p>
+			</article>
+		</div> -->
+
+				<!-- Modal Código de barras -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  <div class="modal-dialog">
 				    <div class="modal-content">
@@ -31,49 +107,16 @@
 							<div class="modal-footer">
 						        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cerrar</button>
 						        <button type="submit" class="btn btn-info btn-simple">Buscar</button>
-						      </div>
+						    </div>
 						</form>	
+						<div class="modal-footer"></div>
 				      </div>
 				      
 				    </div>
 				  </div>
 				</div>
-				<h2>Lista de aprendices</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo doloremque, impedit dignissimos porro in, illum. Beatae libero id repellendus ab, eaque nisi, officia ipsum officiis quasi itaque vel ea corporis earum voluptatum nulla voluptates laborum aperiam, vero! Repudiandae, quo, rerum!</p>
-				<hr>
-
-				<div class="table-container">
-					<table class="table" id="example">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>Nombre completo <i class="fa fa-sort-amount-asc"></i></th>
-								<th>Programa de formación <i class="fa fa-sort-amount-asc"></i></th>
-								<th>Ficha de programa <i class="fa fa-sort-amount-asc"></i></th>
-								<th>Acciones <i class="fa fa-sort-amount-asc"></i></th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php $count = 0; ?>
-							<?php while ($row = mysqli_fetch_array($query)): ?>
-							<tr>
-								<td><?= ++$count ?></td>
-								<td><?= $row['nombre_completo'] ?></td>
-								<td class="text-uppercase"><?= $row['programa_formacion'] ?></td>
-								<td><?= $row['numero_ficha'] ?></td>
-								<td>
-									<a href="ver_solicitud.php?id=<?= $row['id_aprendices'] ?>"><i class="fa fa-file-text"></i>&nbsp Ver solicitud</a>
-									<a href="editar.php?id=<?= $row['id_aprendices'] ?>">Modificar datos</a>
-									<a href='javascript:;' class="eliminar-usuario" data-id="<?= $row['id_aprendices'] ?>">eliminar</a>
-
-								</td>
-							</tr>
-							<?php endwhile; ?>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
+		
+		</div>		
 	</div>
 </main>
 
